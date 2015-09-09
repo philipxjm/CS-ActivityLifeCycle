@@ -2,6 +2,7 @@ package com.example.philip.activitylifecycle;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,6 +30,29 @@ public class MainActivity extends Activity {
             ActionBar actionBar = getActionBar();
             actionBar.setHomeButtonEnabled(false);
         }
+
+        System.out.println("Created");
+    }
+
+    public void onPause() {
+        super.onPause();  // Always call the superclass method first
+        System.out.println("paused");
+    }
+
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        System.out.println("resumed");
+    }
+
+    protected void onStop() {
+        super.onStop();  // Always call the superclass method first
+        System.out.println("stopped");
+    }
+
+    protected void onRestart() {
+        super.onRestart();  // Always call the superclass method first
+
+        System.out.println("restarted");
     }
 
     @Override
